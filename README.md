@@ -27,5 +27,16 @@ Suppose one is looking for a zip-library that can be used in a project and finds
 
 https://github.com/nih-at/libzip
 
+If one downloads the libzip-main.zip file (The whole essence of this nonmake project is to show how to build a c-project without all kind of dependencies and installed packages, so this also explains the steps without even having git installed) and extract the files in a directory. The INSTALL.md mentions that the project needs to be build using cmake, it also mentions 10! other mandatory and optional packages (11 with cmake included) to be installed in order to build or use the library. So if one tries to do that on a Windows 10 system with Visual Studio and cmake installed, your environment and results may vary, it stops (after more than 3 minutes(!) of strange c-function checking, with the following error-message:
+
+COULD NOT FIND ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR)  (Required is at least version "1.1.2")
+
+But the INSTALL.md mentioned that zlib comes with most operating systems. Apparently Windows 10 does not fall into that category? And this is the first and only mandatory package/library that is needed for libzip. That does not give much confidence for the 9 other optional packages. So we have to install zlib first, but from the error-message and the use of cmake that hides all the intelligence, it is absolutely not clear how to install zlib, such that cmake finds it correctly. The error-message for example seems to point to the environment variables ZLIB_LIBRARY and ZLIB_INCLUDE_DIR that need to be set correctly. The link in the INSTALL.md file points to the following site:
+
+https://www.zlib.net
+
+However, that site does not show any installer to install, only 3 compressed files with source-code and a cryptictally described zlib.tar.gz file, named "Permalink for the most recent release:", so installing yet another application (for example 7zip) is mandatory, just to check what is contained in that file ... and appears to be an Install-on-Demand archive ... after installing the package, of course did lead to the same error for the missing ZLIB library. So, ..., where to go from this?; try to set the environment variables, try to read and understand the 500 lines of the CMakeLists.txt file, or try to find the problem in the 43 files and 14 directories that cmake generated, or try to find the problem in the CMakeCache.txt file with 750 unreadable lines of cmake code? Or ... try to take the easy route and try to build the zlib library from source? The latter it is ...
+
+After downloading the zlib source code I discovered that my ExtractAll option in Windows to extract a zip-file was replaced by Express Zip from NCH?!@#@? And trying to unzip the zlib131.zip took ages (several minutes). Considering the fact that the Express Zip replaces a well working unzip option in Windows with an unworkable slow application can be considered malware. So how can this rabbit hole just trying to build the libzip library get worse?
 
 
