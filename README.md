@@ -77,3 +77,4 @@ compat.h(147): warning C4067: unexpected tokens following preprocessor directive
 
 At this point a normal person would reject the project altogether and start doing more usefull things in their life. As already stated this is not a criticism of the libzip project itself, the problems can be a result of many things, for example Windows not supporting ZLIB, or the installation of zlib library having changed, or due to cl or cmake changes, etc.. but this is a problem with every dependency and a normal developer should stop after seeing more than 2 dependencies in a project, especially if no potential problem with the dependencies are explained. But in this case we still continue ...
 
+The compat.h fails on the line with the contents "#if SIZEOF_OFF_T == 8". And it is absolutely not clear where it actually failed on. Tryning different std:c++ versions did not result in any solution.
