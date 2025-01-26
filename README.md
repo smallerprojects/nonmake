@@ -39,4 +39,11 @@ However, that site does not show any installer to install, only 3 compressed fil
 
 After downloading the zlib source code I discovered that my ExtractAll option in Windows to extract a zip-file was replaced by Express Zip from NCH?!@#@? And trying to unzip the zlib131.zip took ages (several minutes). Considering the fact that the Express Zip replaces a well working unzip option in Windows with an unworkable slow application can be considered malware. So how can this rabbit hole just trying to build the libzip library get worse?
 
+The zlib project contains 253 files and 36 folders! and only 15(!) c-files to build the library!! So many more make-system related files than actual source-files! Running cmake in a build folder results in 53 extra files in 15 directories and not even building the library! But because it creates a zconf.h file needed for the c-files to be build, it can also be used to build the library with the following command:
+
+cl -c *.c
+lib *.obj /OUT:zlib.lib
+
+That is it, these two commands replaces ALL the cmake bloat, all the MB's of make-system bloat and ALL the unnecessary directories and other make-files that only add confusion and absolutely no gain, if one only wants to build the library in a single environment! But for linux this would also be a few simple commands. So in essence the zlib project can be condensed from a 4.36 MB 255 files in 36 directories project (4.85 MB, 307 files and 52 directories after cmake run), into a 2.31 MB, 52 files and 3 flder project and a 2-line batch-script to build the library without make-system bloat.
+
 
