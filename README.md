@@ -62,3 +62,4 @@ Another "solution" (=workaround) is just to locate all the relvant c- and h-file
 export(TARGETS zip\
   FILE "${PROJECT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake)
 
+The PROJECT_NAME is not set anywhere in the CMakeLists.txt file, so it is not clear what value it has and not to mention PROJECT_BINARY_DIR that is also not set in the cmake file ... sigh and double sigh ... and no *.cmake files are found in the libzip directory ... Normally I would have stopped when reading about the 10-11 optional packages the library depended on, but in this case I want to illustrate the actual problems one encounters, just trying to use a "simple" library. There are probably an endless number of cmake-aware people who know a good solution for every problem that I encountered, but that is the issue, why do I need these cmake-experts to just build a simple library?
