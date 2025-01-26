@@ -21,7 +21,7 @@ A rant about make-systems only has value if the disadvantages can be illustrated
 
 # LibZip example github project
 
-Following example is meant to illustrate the problems with make-systems and is not meant to criticize the projects itself, in this case libzip and zlib. Thousands of other github projects could have been used to visualize the modern problems with make-systems.
+The following example is meant to illustrate the problems with make-systems and is not meant to criticize the projects itself, in this case libzip and zlib. Thousands of other github projects could have been used to visualize the modern problems with make-systems.
 
 Suppose one is looking for a zip-library that can be used in a project and finds a project that seemingly does exactly what one was looking for, the libzip library:
 
