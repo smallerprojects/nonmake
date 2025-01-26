@@ -87,3 +87,4 @@ It seems that the linux version worked better, but after calling cmake it create
 
 lib/CMakeFiles/zip.dir/build.make:3013: recipe for target 'lib/libzip.so.5.5' failed
 
+Yes, cmake generates many make-files and some having literally thousands lines of code, and in this case the build.make file fails on line 3013 on a make command.
