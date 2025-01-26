@@ -66,7 +66,7 @@ The PROJECT_NAME is not set anywhere in the CMakeLists.txt file, so it is not cl
 
 We could assume that the src directory contains all the critcal c- and h-files, but after looking in the lib-directory it seems that that directory contains all essential c- and h-files. The README.md file only adds to the confusion, because it mentions that the src and examples directories contain the examples, but no mention about the lib-directory. We have to assume that all lib c- and h-files are in the lib directory and try to build them to a library with the following commands:
 
-cl -c lib\*.c\
+cl -c lib\\*.c\
 lib *.obj /OUT:libzip.lib
 
 But of course that also fails, in this case because the cmake command was not completed and the config.h file was not created correctly (also a taks that cmake does). The configure nonsense is a linux feature, and even a much much more complex system then any make-system combined. It was the main reason for me not to switch to linux 20+ years ago and it is extremely irritating to be bothered by it 20 years later on a windows system. Luckily for a windows system it is relatively easy and just renaming the config.h.in to config.h is in most cases sufficient, but still a nasty burden, because it is not always that easy. And of course libzip is one of those cases and the h-files are littered with cmake nonsense. So now we have to debug/fix the config.h and zipconf.h files.
