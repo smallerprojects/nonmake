@@ -48,12 +48,12 @@ That is it, these two commands replaces **ALL** the cmake bloat, all the MB's of
 
 But, the quest continues, because we still do not know how to communicate to cmake within the libzip project where the zlib library is. At no point in the documentation it is described how to incorporate the zlib library in the libzip project. So one has to guess or dive into the cmake bloat files. To save time, the first option is tried; copy the zlib.lib and zlib.h in the libzip folder and set the ZLIB_LIBRARY and ZLIB_INCLUDE_LIB environment variables ... It still gives the ZLIB errors, but now also fails on the other "optional" packages.
 
-Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE)
-Could NOT find Nettle (missing: Nettle_LIBRARY Nettle_INCLUDE_DIR) (Required is at least version "3.0")
-Could NOT find GnuTLS (miising: GNUTLS_LIBRARY GNUTLS_INCLUDE_DIR)
-Could NOT find MbedTLS (missing: MbedTLS_LIBRARY MbedTLS_INCLUDE_DIR) (Required is at least version "1.0")
-Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY OPENSSL_INCLUDE_DIR)
-Could NOT find ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR)  (Required is at least version "1.1.2")
+Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE)\
+Could NOT find Nettle (missing: Nettle_LIBRARY Nettle_INCLUDE_DIR) (Required is at least version "3.0")\
+Could NOT find GnuTLS (miising: GNUTLS_LIBRARY GNUTLS_INCLUDE_DIR)\
+Could NOT find MbedTLS (missing: MbedTLS_LIBRARY MbedTLS_INCLUDE_DIR) (Required is at least version "1.0")\
+Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY OPENSSL_INCLUDE_DIR)\
+Could NOT find ZLIB (missing: ZLIB_LIBRARY ZLIB_INCLUDE_DIR)  (Required is at least version "1.1.2")\
 
 SO in trying to solve the ZLIB issue, it creates 5 other issues, for packages probably not even needed (but that is not clear from the documentation)! One could say that these kind of issues are not make-system related issues, but they are, because cmake is the failing system in this and not working correctly, or in the least not giving any indication how to solve the problem. And not forgetting that these are just two very simple libraries! Without cmake, no more than 10 lines of "build-code" should have been present to investigate.
 
