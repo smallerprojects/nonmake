@@ -103,4 +103,4 @@ The following github project is downloaded:
 
 https://github.com/WinMerge/winmerge
 
-And that is a much larger project than the libzip project, it contains 6274(!) files in 558(!) directories and looks to be based on vc-projects and of course sln-files for every version of Visual Studio (that is another problem in itself).
+And that is a much larger project than the libzip project, it contains 6274(!) files in 558(!) directories and looks to be based on vc-projects and of course sln-files for every version of Visual Studio (that is another problem in itself). Having experience with github projects that only have vc-project files, almost never work and also for this project this was the case. The first build failed on the missing afxres.h and afxwin.h files. And also with the message that the MFC libraries needed to be installed, ... so that was a no-go area and not even worth pursuing ... not even as an example for the make-system problems ... So another github project must be considered.
