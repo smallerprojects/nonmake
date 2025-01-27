@@ -17,7 +17,7 @@ Cmake for example is an extremely bloated system, that can generate files with t
 
 # Rant about make-systems
 
-A rant about make-systems only has value if the disadvantages can be illustrated by clear examples where a make-system is only hurting a project and not helping in any way.
+A rant about make-systems only has value if the disadvantages can be illustrated by clear examples where a make-system is only hurting a project and not helping in any way. Following is a long rant about problems encountered with make-systems of different github projects.
 
 # LibZip example github project
 
