@@ -137,5 +137,19 @@ This project is a visualisation library for making graphs of most diverse data. 
 
 https://github.com/alandefreitas/matplotplusplus
 
-The cmake run worked first time! And although the build took 30 minutes, the build was also successfull! We have a winner, however, the size of the project is probably not a good example, because for this project it pobably is usefull to use a make-system (in this case via Visual Studio). Also after the build, the project directory suddenly contains 12997 files in 2412 directories! But 10661 files are part of the examples directory, so should not important for building the library itself.
+The cmake run worked first time! And although the build took 30 minutes, the build was also successfull! We have a winner, however, the size of the project is probably not a good example, because for this project it pobably is usefull to use a make-system (in this case via Visual Studio). Also after the build, the project directory suddenly contains 12997 files in 2412 directories! But 10661 files are part of the examples directory, so should not important for building the library itself. However, it was too good to be true, after removing most of the examples from the project a rebuild only took 5 min, but trying to run an example, it became clear that gnuplot was needed to run the example .. Scanning the extremely large README.md file, it mentioned somewhere the text:
+
+Install Gnuplot 5.2.6+ (Required at runtime)
+
+The gnuplot is probably much larger than matplot++, so this quest also ends here ... Not mentioning this runtime dependency somewhere in the README.md in a more accessible location, raises the question what else is needed to get it running.
+
+The make-system rant journey will now only focus on very small projects ... that have no dependencies at all ... One or two dependencies is acceptable if one really wants the project and use it in some form, but for illustrating the problems with make-systems and how it can be done without a make-system, any dependency is killing. Lets try another compression library.
+
+# Lzham codec example github project
+
+This compression project can be considered a small project with just 89 files in 10 directories based on cmake.
+
+https://github.com/richgel999/lzham_codec
+
+Apart from the cmake version warnings and another projectname warning, cmake runs OK when first running it. It created 99 extra files in 31 directories for just this small project, but is has no dependencies, so seems to be a perfect example. Apart from some build-warnings the project was build in ca. 31 sec (including examples).
 
