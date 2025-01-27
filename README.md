@@ -81,7 +81,7 @@ The compat.h fails on the line with the contents "#if SIZEOF_OFF_T == 8". And it
 
 However, during this attempt to get all the c-files building, I discovered that the zlib.h (matching the zlib.lib library) needs to include the zconf.h file, but that file is nowhere to be find in the zlib project?!? Where is the compiler able to find that file even if we use the cmake system? Trying to disable the inclusion of the zconf.h file, also led to problems, first of all because it defines the ZEXTERN macro, but that clearly would be extern of empty, so that was easy to fix, but of course not the other many build errors ...
 
-Time to give up ... Although there is another last possibility, but very manually intensive and that is trying to get it building under linux, because I suspect that both libraries are mainly geared for that platform, and after that, remove all the cmake and other nonsense and try to get the same projects building under Windows ... It are just c-files, so hard could that be ...?
+Time to give up ... Although there is another last possibility, but very manually intensive and that is trying to get it building under linux, because I suspect that both libraries are mainly geared for that platform, and after that, remove all the cmake and other nonsense and try to get the same projects building under Windows ... It are just c-files, so how hard could that be ...?
 
 It seems that the linux version worked better, but after calling cmake it created the Makefile correctly, but calling make resulted in a critical error at the 46% level of the build.
 
