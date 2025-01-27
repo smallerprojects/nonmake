@@ -99,5 +99,8 @@ A diff-tool is an essential tool for every software developer, so that will be o
 
 # Winmerge example github project
 
+The following github project is downloaded:
+
 https://github.com/WinMerge/winmerge
 
+And that is a much larger project than the libzip project, it contains 6274(!) files in 558(!) directories and looks to be based on vc-projects and of course sln-files for every version of Visual Studio (that is another problem in itself).
