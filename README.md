@@ -127,4 +127,14 @@ This project is also based on cmake and "only" consists of 726 files in 47 direc
 
 https://github.com/tesseract-ocr/tesseract
 
-The first cmake run of course failed, because it depends on a non-installed package. In general this should not be the biggest problem, but in this case it failed on a SWConfig.cmake error and it is not clear what this SW-package is. The README.md also mentions dependencies on Leptonica that in its turn depends on zlib (!), png and tiff packages.
+The first cmake run of course failed, because it depends on a non-installed package. In general this should not be the biggest problem, but in this case it failed on a SWConfig.cmake error and it is not clear what this SW-package is. The README.md also mentions dependencies on Leptonica that in its turn depends on zlib (!), png and tiff packages. The leptonica project only seems to be available as source-code, so this is yet another project that needs to be build first.
+
+The leptonica project seems to be a bigger project than the tesseract project itself and is also based on cmake, but there should be a project on github that builds out of the box, so fingers crossed. As expected, the cmake run failed on a dependency and again failed on this mysterious SW-package. Looking into the README.md file gives more information, the SW client software needs to be downloaded from a site that lists an unusual large number of packages and executables to download, chose one zip-file that looked appropriate, but that only contained one large sw.exe executable of 63 MB! Even if I am working on a virtual machine, running a vague executable without any description of what it is or does, is a definite no-go. There was a sw.pdf file in the repository, but the first sentence contains the words "incomplet and incorrekt". Also the introduction was very unclear of what it actually was, it is a kind of software management system, dedicated to better software management ...?!? So distributing a single executable and on the side with incomplet and incorrekt documentation is a way for better software management?? Further reading doesn't make it much clearer and saw that it is a kind of package management system or something like that and also related to cmake config issues. No thanks ... On to the next project .. let's try another project, a plot tool.
+
+# Matplot++ example github project
+
+This project is a visualisation library for making graphs of most diverse data. It is a relatively large project with 1911(!) files in 267 directories. How much plotting can you do with 1900+ files?
+
+https://github.com/alandefreitas/matplotplusplus
+
+The cmake run worked first time! And although the build took 30 minutes, the build was also successfull! We have a winner, however, the size of the project is probably not a good example, because for this project it pobably is usefull to use a make-system (in this case via Visual Studio).
