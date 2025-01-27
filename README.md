@@ -103,4 +103,18 @@ The following github project is downloaded:
 
 https://github.com/WinMerge/winmerge
 
-And that is a much larger project than the libzip project, it contains 6274(!) files in 558(!) directories and looks to be based on vc-projects and of course sln-files for every version of Visual Studio (that is another problem in itself). Having experience with github projects that only have vc-project files, almost never work and also for this project this was the case. The first build failed on the missing afxres.h and afxwin.h files. And also with the message that the MFC libraries needed to be installed, ... so that was a no-go area and not even worth pursuing ... not even as an example for the make-system problems ... So another github project must be considered.
+And that is a much larger project than the libzip project, it contains 6274(!) files in 558(!) directories and looks to be based on vc-projects and of course sln-files for every version of Visual Studio (that is another problem in itself). Having experience with github projects that only have vc-project files, almost never work and also for this project this was the case. The first build failed on the missing afxres.h and afxwin.h files. And also with the message that the MFC libraries needed to be installed, ... so that was a no-go area and not even worth pursuing ... not even as an example for the make-system problems ... So another github project must be considered, what about a screen-capture tool?
+
+# Ksnip example github project
+
+This is a much smaller project but still has 639 files in 106 directories and is based on cmake, so another good example for the problems with cmake.
+
+https://github.com/ksnip/ksnip
+
+Running cmake already points out a serious problem with using cmake and maintaining older projects, the following warning was shown:
+
+Compatibility with CMake < 3.10 will be removed from a future version of CMake.
+
+So, ... that means if one has a project and want to maintain it for a longer period of time, one has to keep different versions of CMake working in your development environment. I did not even know about this backwards incompatibility and is even more of a reason never to build projects based on cmake.
+
+But of course, the version warning was not the only problem, cmake failed on the fact that Qt was not installed. Reading the README.md did mention that ksnip is based on Qt, but no instructions how to install it, but in this case the cmake output showed a lot of information about linking the Qt package (but do not know yet wether it is usefull). It also mentions that the packages kImageAnnotator & kColorPicker need to be installed. First Qt must be installed (the writer of the README.md probably expects that everyone else already has this installed?).
