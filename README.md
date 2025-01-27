@@ -85,8 +85,8 @@ Time to give up ... Although there is another last possibility, but very manuall
 
 It seems that the linux version worked better, but after calling cmake it created the Makefile correctly, but calling make resulted in a critical error at the 46% level of the build.
 
-CMake Error: cmake_symlink_library: System Error: Operation not permitted
-CMake Error: cmake_symlink_library: System Error: Operation not permitted
+CMake Error: cmake_symlink_library: System Error: Operation not permitted\
+CMake Error: cmake_symlink_library: System Error: Operation not permitted\
 lib/CMakeFiles/zip.dir/build.make:3013: recipe for target 'lib/libzip.so.5.5' failed
 
 Yes, cmake generates many make-files and some having literally thousands lines of code, and in this case the build.make file fails on line 3013 on a the following make command:
