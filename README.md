@@ -137,4 +137,5 @@ This project is a visualisation library for making graphs of most diverse data. 
 
 https://github.com/alandefreitas/matplotplusplus
 
-The cmake run worked first time! And although the build took 30 minutes, the build was also successfull! We have a winner, however, the size of the project is probably not a good example, because for this project it pobably is usefull to use a make-system (in this case via Visual Studio).
+The cmake run worked first time! And although the build took 30 minutes, the build was also successfull! We have a winner, however, the size of the project is probably not a good example, because for this project it pobably is usefull to use a make-system (in this case via Visual Studio). Also after the build, the project directory suddenly contains 12997 files in 2412 directories! But 10661 files are part of the examples directory, so should not important for building the library itself.
+
