@@ -151,5 +151,5 @@ This compression project can be considered a small project with just 89 files in
 
 https://github.com/richgel999/lzham_codec
 
-Apart from the cmake version warnings and another projectname warning, cmake runs OK when first running it. It created 99 extra files in 31 directories for just this small project, but is has no dependencies, so seems to be a perfect example. Apart from some build-warnings the project was build in ca. 31 sec (including examples).
+Apart from the cmake version warnings and another projectname warning, cmake runs OK when first running it. Cmake created 99 extra files in 31 directories for just this small project, but is has no dependencies, so seems to be a perfect example. Apart from some build-warnings the project was build from Visual Studio in ca. 31 sec (including examples).
 
