@@ -99,3 +99,5 @@ A diff-tool is an essential tool for every software developer, so that will be o
 
 # Winmerge example github project
 
+https://github.com/WinMerge/winmerge
+
