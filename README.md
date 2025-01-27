@@ -93,3 +93,4 @@ Yes, cmake generates many make-files and some having literally thousands lines o
 
 @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/user/FAT32 DATA/linux/libzip/libzip-1.11.3/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_115) "Linking C shared library libzip.so"
 
+How to handle this error? Why do I see color settings in a cmake make-file for a zip-library? And what is it actually failing on? I do not know any cmake syntax, so how can we get any further from this cryptic error message?
