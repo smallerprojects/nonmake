@@ -119,6 +119,12 @@ So, ... that means if one has a project and want to maintain it for a longer per
 
 But of course, the version warning was not the only problem, cmake failed on the fact that Qt was not installed. Reading the README.md did mention that ksnip is based on Qt, but no instructions how to install it, but in this case the cmake output showed a lot of information about linking the Qt package (but do not know yet wether it is usefull). It also mentions that the packages kImageAnnotator & kColorPicker need to be installed. First Qt must be installed (the writer of the README.md probably expects that everyone else already has this installed?). This also illustrates all the problems with building all kind of dependencies in a github project. Just trying out 3 projects, needed me to install; cmake, MFC libraries, zlib, Qt, etc..
 
-I had to assume that the Qt SDK needed to be installed, but trying to do that showed that one has to download a free trial version, that will only be working for 10 days! That is fair for a company to do, but is weird if an open source project is based on commercial software that needs to be bought and no mention of that in the ksnip README.md file ... So this project must be abandoned also ...
+I had to assume that the Qt SDK needed to be installed, but trying to do that showed that one has to download a free trial version, that will only be working for 10 days! That is fair for a company to do, but is weird if an open source project is based on commercial software that needs to be bought and no mention of that in the ksnip README.md file ... So this project must be abandoned also ... The ksnip project also mentioned that is uses tesseract as an OCR system, that is a good next example to try ...
 
+# Tesseract example github project
 
+This project is also based on cmake and "only" consists of 726 files in 47 directories.
+
+https://github.com/tesseract-ocr/tesseract
+
+The first cmake run of course failed, because it depends on a non-installed package. In general this should not be the biggest problem, but in this case it failed on a SWConfig.cmake error and it is not clear what this SW-package is. The README.md also mentions dependencies on Leptonica that in its turn depends on zlib (!), png and tiff packages.
