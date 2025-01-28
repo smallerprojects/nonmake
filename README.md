@@ -155,23 +155,23 @@ Apart from the cmake version warnings and another projectname warning, cmake run
 
 Now for the fun part, removing all the make-system related bloat and illustrate how this project can be converted to a true small make-system free project. From the start a release rebuild takes around 1 min (on a slow virtual machine). Building the release build without any changes takes around 25 sec to 60 sec. I have no clue why this is rebuilding source-files again when there are no changes, but I also do not care and do not want to investigate that problem. The total project at this point contains the following files/directories:
 
-bin                            - Contains the executables that were built
-build                          - Directory made for cmake to put all cmake generates files in
-example1                       - Example 1 source code
-example2                       - Example 2 source code
-example3                       - Example 3 source code
-example4                       - Example 4 source code
-include                        - Include directory with the h-files for the library
-lib                            - Generated library and dll files
-lzhamcomp                      - ???
-lzhamdecomp                    - ???
-lzhamdll                       - Source code for generating dll file(s)
-lzhamlib                       - Source code for lzham library
-lzhamtest                      - Command line test program source code
-CMakeLists.txt                 - Main cmake file
-LICENSE                        - License file
-lzham.sln                      - Visual studio solution file
-README.md                      - Readme file
+bin                            - Contains the executables that were built\
+build                          - Directory made for cmake to put all cmake generates files in\
+example1                       - Example 1 source code\
+example2                       - Example 2 source code\
+example3                       - Example 3 source code\
+example4                       - Example 4 source code\
+include                        - Include directory with the h-files for the library\
+lib                            - Generated library and dll files\
+lzhamcomp                      - ???\
+lzhamdecomp                    - ???\
+lzhamdll                       - Source code for generating dll file(s)\
+lzhamlib                       - Source code for lzham library\
+lzhamtest                      - Command line test program source code\
+CMakeLists.txt                 - Main cmake file\
+LICENSE                        - License file\
+lzham.sln                      - Visual studio solution file\
+README.md                      - Readme file\
 
 Just to test, the example1 executable can ge gemerated with the following command in the example1 directory:
 
