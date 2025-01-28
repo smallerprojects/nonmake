@@ -173,7 +173,7 @@ LICENSE                        - License file\
 lzham.sln                      - Visual studio solution file\
 README.md                      - Readme file\
 
-Just to test, the example1 executable can ge gemerated with the following command in the example1 directory:
+Just to test, the example1 executable can ge generated with the following command in the example1 directory:
 
 cl example1.c /MD -I..\include ..\lib\x64\lzham_64.lib
 
