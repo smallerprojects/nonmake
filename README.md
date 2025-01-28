@@ -185,7 +185,7 @@ So building the executables is a breeze without any make-system whatsoever! The 
 
 After some trial and error and investigating the source-code, it was possible to create the lzhamtest.exe executable with the following command (without creating or using a static or dynamic library):
 
-cl lzhamtest.cpp timer.cpp ..\src\*.cpp /MD /EHsc -DWIN32 -I..\include
+cl lzhamtest.cpp timer.cpp ..\src\\*.cpp /MD /EHsc -DWIN32 -I..\include
 
 But the executable was increased to 320 kB, but this also includes the code for the lib or dll, so no seperate *.lib or *.dll needed. At this point we can clean up all the bloated make-system files (we already copied the cpp-source files in a src directory). The examples also do not seem to be adding much and two of them are more autotesters than examples, so we remove them also. After the first cleanup we have the following (further cleanups can even make it more compact and smaller):
 
