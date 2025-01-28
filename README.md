@@ -183,3 +183,23 @@ cl lzhamtest.cpp timer.cpp /MD /EHsc -DWIN32 -I..\include ..\lib\x64\lzham_x64.l
 
 So building the executables is a breeze without any make-system whatsoever! The library is a bit harder, because the project supports a static library, a dynamic dll library and a static library around the dll and this is not clearly documented how this is all connected together. This information must be extracted from the CMakeLists.txt files ... or just by trial and error. Preferably we want to build it all in one executable without using a static or dynamic library, but then one must determine what the source-files are to enable this. The lzhamtest program is a commandline test program that enables compressing and decompressing files and can be used as the start for any project that uses the lzham compression "library". This process to determine what are the essential source-files for the static lib and dynamic dll libraries was not necessary if it was explained clearly or if cmake did not obscure all this info in the cmake-files.
 
+After some trial and error and investigating the source-code, it was possible to create the lzhamtest.exe executable with the following command:
+
+cl lzhamtest.cpp timer.cpp ..\src\*.cpp /MD /EHsc -DWIN32 -I..\include
+
+But the executable was increased to 320 kB, but this also includes the code for the lib or dll, so no seperate *.lib or *.dll needed. At this point we can clean up all the bloated make-system files (we already copied the cpp-source files in a src directory (in able to use the command above). The examples also do not seem to be adding much and two of them are more autotesters than examples. After the first cleanup we have the following:
+
+include                        - Include directory with the h-files for the library\
+src                            - LZHAM Source files
+LICENSE                        - License file\
+README.md                      - Readme file\
+build.bat                      - Windows build batch script
+lzham.cpp                      - Original lzhamtest.cpp source file
+
+That is it! The whole repository is now < 1 MB(!) with 55 files in 2 directories. No cmake bloat, no VC or VS bloat, just a simple script containing the following lines of code:
+
+@ECHO OFF
+cl lzham.cpp src\*.cpp /MD /EHsc -DWIN32 -Iinclude
+del *.obj
+
+3 lines replacing hundreds of mega-bytes and uncountable lines of make-system code and with a build-time of around 10 seconds (building every source-code is 2x faster than an empty build with Visual Studio)!! For linux another small sh-shell file can be created. The question then arises, why use any bloated build-system for such a small project?
