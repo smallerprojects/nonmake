@@ -198,8 +198,8 @@ lzham.cpp                      - Original lzhamtest.cpp source file
 
 That is it! The whole repository is now < 1 MB(!) with 55 files in 2 directories. No cmake bloat, no VC or VS bloat, just a simple script containing the following lines of code:
 
-@ECHO OFF
-cl lzham.cpp src\*.cpp /MD /EHsc -DWIN32 -Iinclude
-del *.obj
+@ECHO OFF\
+cl lzham.cpp src\*.cpp /MD /EHsc -DWIN32 -Iinclude\
+del *.obj\
 
 3 lines replacing hundreds of mega-bytes and uncountable lines of a cmake-system code and with a build-time of around 10 seconds (building every source-code is 2x faster than an empty build with Visual Studio)!! For linux another small sh-shell file can be created. The question then arises, why use any bloated build-system for such a small project at all?
