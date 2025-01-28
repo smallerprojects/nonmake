@@ -203,3 +203,5 @@ cl lzham.cpp src\\*.cpp /MD /EHsc -DWIN32 -Iinclude\
 del *.obj\
 
 3 lines replacing hundreds of mega-bytes and uncountable lines of cmake code and with a build-time of around 10 seconds (building every source-code is 2x faster than an empty build with Visual Studio)!! For linux another small sh-shell file can be created. The question then arises, why use any bloated build-system for such a small project at all? The only precondition is having the Microsoft CL compiler installed and that can be done by installing the full Visual Studio with C/C++ packages, but if only the commandline versions are needed one can download and install the Visual Studio Buildtools. Microsoft is well known for changing URLs and names at will at random times, so giving links here is useless ...
+
+Please note that my criticism about make-systems is not about the projects itself. Especially not this lzham project, because it seems to be a very impressive compression library (when you get it building and working)!
