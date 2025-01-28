@@ -177,4 +177,9 @@ Just to test, the example1 executable can ge gemerated with the following comman
 
 cl example1.c /MD -I..\include ..\lib\x64\lzham_64.lib
 
-And generates example1.exe with a size of 13 kB i.s.o. the size of 286 kB for the release build and 1.6 MB(!) for the debug build! 
+And generates example1.exe with a size of 13 kB i.s.o. the size of 286 kB for the release build and 1.6 MB(!) for the debug build! Building the test program in lzhamtest however failed on a missing header file. But after some investigation it was clear the following command is needed:
+
+cl lzhamtest.cpp timer.cpp /MD /EHsc -DWIN32 -I..\include ..\lib\x64\lzham_x64.lib
+
+So building the executables is a breeze without any make-system whatsoever! The library is a bit harder, because the project supports a static library, a dynamic dll library and a static library around the dll and this is not clearly documented how this is all connected together. This information must be extracted from the CMakeLists.txt files ...
+
