@@ -147,9 +147,34 @@ The make-system rant journey will now only focus on very small projects ... that
 
 # Lzham codec example github project
 
-This compression project can be considered a small project with just 89 files in 10 directories based on cmake.
+This compression project can be considered a small project with just 89 files in 10 directories and based on cmake.
 
 https://github.com/richgel999/lzham_codec
 
-Apart from the cmake version warnings and another projectname warning, cmake runs OK when first running it. Cmake created 99 extra files in 31 directories for just this small project, but is has no dependencies, so seems to be a perfect example. Apart from some build-warnings the project was build from Visual Studio in ca. 31 sec (including examples).
+Apart from the cmake version warnings and another projectname warning, cmake runs OK when first running it. Cmake created 99 extra files in 31 directories for just this small project, but is has no dependencies, so seems to be a perfect example. Apart from some build-warnings the project was build with Visual Studio in ca. 31 sec (including examples). The resulting directory exploded to a whopping 146 MB(!) 362 files in 77 directories, but this due to the fact that default the debug option was set and the resulting pdb and ilk files are normally very large. Nowadys 146 MB is not that large, but cosidering one can have a lot of small C/C++ projects in its development storage, backing up these bloated directories can be a heavy burden. Especially for developers who do not use debuggers, the debug build is an unecessary burden also. Changing the project to only perform a release build also does not removed the debug output files and only adds more files and directories. So now the directory has a size of 228(!) MB and 527 files in 95 directories. Note, we are still talking about a small project, so this is ridiculous!
 
+Now for the fun part, removing all the make-system related bloat and illustrate how this project can be converted to a true small make-system free project. From the start a release rebuild takes around 1 min (on a slow virtual machine). Building the release build without any changes takes around 25 sec to 60 sec. I have no clue why this is rebuilding source-files again when there are no changes, but I also do not care and do not want to investigate that problem. The total project at this point contains the following files/directories:
+
+bin                            - Contains the executables that were built
+build                          - Directory made for cmake to put all cmake generates files in
+example1                       - Example 1 source code
+example2                       - Example 2 source code
+example3                       - Example 3 source code
+example4                       - Example 4 source code
+include                        - Include directory with the h-files for the library
+lib                            - Generated library and dll files
+lzhamcomp                      - ???
+lzhamdecomp                    - ???
+lzhamdll                       - Source code for generating dll file(s)
+lzhamlib                       - Source code for lzham library
+lzhamtest                      - Command line test program source code
+CMakeLists.txt                 - Main cmake file
+LICENSE                        - License file
+lzham.sln                      - Visual studio solution file
+README.md                      - Readme file
+
+Just to test, the example1 executable can ge gemerated with the following command in the example1 directory:
+
+cl example1.c /MD -I..\include ..\lib\x64\lzham_64.lib
+
+And generates example1.exe with a size of 13 kB i.s.o. the size of 286 kB for the release build and 1.6 MB(!) for the debug build! 
