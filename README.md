@@ -111,7 +111,7 @@ This is a much smaller project but still has 639 files in 106 directories and is
 
 https://github.com/ksnip/ksnip
 
-Running cmake already points out a serious problem with using cmake and maintaining older projects, the following warning was shown:
+Running cmake already points out a serious problem with using cmake and maintaining long term projects, the following warning was shown:
 
 Compatibility with CMake < 3.10 will be removed from a future version of CMake.
 
